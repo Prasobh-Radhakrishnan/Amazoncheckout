@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211207 01:31:04.008" rpa="false" schemaversion="2">
+<suite id="s1" name="Amazonlogin" source="C:\Users\Praso\PycharmProjects\AmazonCheckout\tests\Amazonlogin.robot">
+<test id="s1-t1" name="Validate Amazon Checkout">
+<kw name="open the browser with amazone url" library="Amazon">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=../Resources/chromedriver.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211207 01:31:04.200" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211207 01:31:04.200" endtime="20211207 01:31:05.514"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.amazon.in/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211207 01:31:05.514" level="INFO">Opening url 'https://www.amazon.in/'</msg>
+<status status="PASS" starttime="20211207 01:31:05.514" endtime="20211207 01:31:08.201"/>
+</kw>
+<status status="PASS" starttime="20211207 01:31:04.200" endtime="20211207 01:31:08.201"/>
+</kw>
+<kw name="click on all dropdown and select electronic" library="Amazon">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchDropdownBox"]</arg>
+<arg>search-alias=electronics</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211207 01:31:08.208" level="INFO">Selecting options from selection list 'xpath=//*[@id="searchDropdownBox"]' by value search-alias=electronics.</msg>
+<status status="PASS" starttime="20211207 01:31:08.208" endtime="20211207 01:31:08.316"/>
+</kw>
+<status status="PASS" starttime="20211207 01:31:08.207" endtime="20211207 01:31:08.316"/>
+</kw>
+<kw name="Search for one plus Mobile" library="Amazon">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:twotabsearchtextbox</arg>
+<arg>Oneplus Mobile</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211207 01:31:08.316" level="INFO">Typing text 'Oneplus Mobile' into text field 'id:twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20211207 01:31:08.316" endtime="20211207 01:31:08.449"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:nav-search-submit-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211207 01:31:08.449" level="INFO">Clicking button 'id:nav-search-submit-button'.</msg>
+<status status="PASS" starttime="20211207 01:31:08.449" endtime="20211207 01:31:10.629"/>
+</kw>
+<status status="PASS" starttime="20211207 01:31:08.316" endtime="20211207 01:31:10.629"/>
+</kw>
+<kw name="Select one mobile and Fetch the Price of the Mobile" library="Amazon">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),"OnePlus Nord CE 5G")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211207 01:31:10.629" level="INFO">Clicking element 'xpath=//span[contains(text(),"OnePlus Nord CE 5G")]'.</msg>
+<status status="PASS" starttime="20211207 01:31:10.629" endtime="20211207 01:31:10.759"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20211207 01:31:10.759" endtime="20211207 01:31:10.773"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Price}</var>
+<arg>id:priceblock_dealprice</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211207 01:31:16.180" level="INFO">${Price} = ₹24,999.00</msg>
+<status status="PASS" starttime="20211207 01:31:10.773" endtime="20211207 01:31:16.180"/>
+</kw>
+<status status="PASS" starttime="20211207 01:31:10.629" endtime="20211207 01:31:16.180"/>
+</kw>
+<kw name="Add the mobile to CART" library="Amazon">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:add-to-cart-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211207 01:31:16.180" level="INFO">Clicking button 'id:add-to-cart-button'.</msg>
+<status status="PASS" starttime="20211207 01:31:16.180" endtime="20211207 01:31:16.357"/>
+</kw>
+<status status="PASS" starttime="20211207 01:31:16.180" endtime="20211207 01:31:16.357"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211207 01:31:16.357" endtime="20211207 01:31:18.503"/>
+</kw>
+<tag>Sanity Test</tag>
+<status status="PASS" starttime="20211207 01:31:04.200" endtime="20211207 01:31:18.503"/>
+</test>
+<doc>To validate the amazon checkout</doc>
+<status status="PASS" starttime="20211207 01:31:04.010" endtime="20211207 01:31:18.503"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Sanity Test</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazonlogin">Amazonlogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
